@@ -1,0 +1,3 @@
+import qrcode as qr
+img = qr.make("https://www.youtube.com/") #here we pass the url for which we want to create qr code. we can also simple write text message then too it will work
+img.save("test.png") #the qr code will be saved in png format with the name test
