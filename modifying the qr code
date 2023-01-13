@@ -1,0 +1,9 @@
+import qrcode
+from PIL import Image
+#qr code has different version ranging from 1 to 40 and it differs on the basis of the amount of data we are passing on the code. The greater the data the higher the version
+qr = qrcode.QRcode(version = 2, error correction = qrcode.constants.ERROR_CORRECT_H,box_size = 10, border = 4)
+# the error correction helps in restoring data if the code is dirty or damaged and their are four levels of error correction available
+qr.add_data("https://leetcode.com/Akshit-Gupta/")
+qr.make(fit = True)
+img = qr.make_image(fill_color = "cyan", back_color = "black")
+img.save("test.png")
